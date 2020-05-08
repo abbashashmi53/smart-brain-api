@@ -32,7 +32,7 @@ app.post('/signin', signin.handleSignin(db,bcrypt))
 app.post('/register', (req,res)=>{register.handleRegister(req,res,db,bcrypt)})
 app.get('/profile/:id',(req,res)=>{profile.handleProfile(req,res,db)})
 app.put ('/image',(req,res)=>{image.handleImage(req,res,db)})
-app.listen(3001,()=>{
-	console.log('app is running on port 3001');
+app.listen(process.env.PORT||3001,()=>{
+	console.log('app is running on port $ { process.env.PORT }');
 
 })
